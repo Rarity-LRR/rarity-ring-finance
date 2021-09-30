@@ -1,10 +1,10 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "67a5ac02c1f0e51f7438ad531732ac53",
+    "revision": "7f184272ecccea98ef15c067e98a3943",
     "url": "/rarity-ring-finance/index.html"
   },
   {
-    "revision": "48cb0797c7ff95693241",
+    "revision": "5c1d7db557b8706d4648",
     "url": "/rarity-ring-finance/static/css/main.f5dc4469.chunk.css"
   },
   {
@@ -92,8 +92,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/rarity-ring-finance/static/js/9.a6aad206.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "48cb0797c7ff95693241",
-    "url": "/rarity-ring-finance/static/js/main.615c784e.chunk.js"
+    "revision": "5c1d7db557b8706d4648",
+    "url": "/rarity-ring-finance/static/js/main.24764882.chunk.js"
   },
   {
     "revision": "a1c01fdec00498be4094",

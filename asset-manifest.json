@@ -5,8 +5,8 @@
     "static/js/1.bba6b5c5.chunk.js": "/rarity-ring-finance/static/js/1.bba6b5c5.chunk.js",
     "static/js/1.bba6b5c5.chunk.js.map": "/rarity-ring-finance/static/js/1.bba6b5c5.chunk.js.map",
     "main.css": "/rarity-ring-finance/static/css/main.f5dc4469.chunk.css",
-    "main.js": "/rarity-ring-finance/static/js/main.615c784e.chunk.js",
-    "main.js.map": "/rarity-ring-finance/static/js/main.615c784e.chunk.js.map",
+    "main.js": "/rarity-ring-finance/static/js/main.24764882.chunk.js",
+    "main.js.map": "/rarity-ring-finance/static/js/main.24764882.chunk.js.map",
     "runtime-main.js": "/rarity-ring-finance/static/js/runtime-main.14c050cd.js",
     "runtime-main.js.map": "/rarity-ring-finance/static/js/runtime-main.14c050cd.js.map",
     "static/js/4.c245304e.chunk.js": "/rarity-ring-finance/static/js/4.c245304e.chunk.js",
@@ -34,7 +34,7 @@
     "static/js/15.ec783306.chunk.js": "/rarity-ring-finance/static/js/15.ec783306.chunk.js",
     "static/js/15.ec783306.chunk.js.map": "/rarity-ring-finance/static/js/15.ec783306.chunk.js.map",
     "index.html": "/rarity-ring-finance/index.html",
-    "precache-manifest.33fcd86e47f1697885cd28427b09e935.js": "/rarity-ring-finance/precache-manifest.33fcd86e47f1697885cd28427b09e935.js",
+    "precache-manifest.d244751ade8bb2a5b23c0d742bc12537.js": "/rarity-ring-finance/precache-manifest.d244751ade8bb2a5b23c0d742bc12537.js",
     "service-worker.js": "/rarity-ring-finance/service-worker.js",
     "static/css/main.f5dc4469.chunk.css.map": "/rarity-ring-finance/static/css/main.f5dc4469.chunk.css.map",
     "static/js/10.a74d1754.chunk.js.LICENSE.txt": "/rarity-ring-finance/static/js/10.a74d1754.chunk.js.LICENSE.txt",
@@ -112,6 +112,6 @@
     "static/js/runtime-main.14c050cd.js",
     "static/js/4.c245304e.chunk.js",
     "static/css/main.f5dc4469.chunk.css",
-    "static/js/main.615c784e.chunk.js"
+    "static/js/main.24764882.chunk.js"
   ]
 }
