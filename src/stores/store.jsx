@@ -55,6 +55,7 @@ import {
   torus,
   authereum
 } from "./connectors";
+import axios from "axios";
 
 import getMyVotes from '../utils/voteFinder.js';
 
@@ -66,6 +67,7 @@ const Emitter = require('events').EventEmitter;
 
 const dispatcher = new Dispatcher();
 const emitter = new Emitter();
+
 
 class Store {
   constructor() {
@@ -1267,7 +1269,22 @@ class Store {
     }
   }
 
-  _getGasPrice = async () => {
+  _getGasPrice = async ()=>{
+    const url = 'https://rpc.ftm.tools';
+    const data = {"jsonrpc":"2.0","method":"eth_gasPrice","params":[],"id":73};
+    const response = await axios.post(url, data);
+    // console.log(response);
+    // const gasP = this.hex2int(response.data.result);
+    // console.log(gasP);
+    const web3 = new Web3(store.getStore('web3context').library.provider);
+    return web3.utils.fromWei(response.data.result, 'gwei');
+    // return response.data.result;
+    // .then((response) => {
+    //     setGasPrice(hex2int(response.data.result)/10**9)
+    // })
+  };
+
+  _getGasPrice1 = async () => {
     try {
       const url = 'https://gasprice.poa.network/'
       const priceString = await rp(url);
