@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/4.3.1/workbox-sw.js");
 
 importScripts(
-  "/rarity-ring-finance/precache-manifest.d244751ade8bb2a5b23c0d742bc12537.js"
+  "/rarity-ring-finance/precache-manifest.840849377a3c4f72a96b7fc80c1fde56.js"
 );
 
 self.addEventListener('message', (event) => {
