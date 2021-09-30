@@ -131,11 +131,11 @@ class Home extends Component {
 
     return (
       <div className={ classes.root }>
-        <Card className={ `${classes.card} ${classes.vote}` } onClick={ () => { this.nav(location.pathname+'burnSummon') } }>
+        <Card className={ `${classes.card} ${classes.vote}` } onClick={ () => { this.nav('burn') } }>
           <DetailsIcon className={ `${classes.icon} icon` } />
-          <Typography variant={'h3'} className={ `${classes.title} title` }>BurnSummon</Typography>
+          <Typography variant={'h3'} className={ `${classes.title} title` }>Burn</Typography>
         </Card>
-        <Card className={ `${classes.card} ${classes.stake}` } onClick={ () => { this.nav(location.pathname+'staking') } }>
+        <Card className={ `${classes.card} ${classes.stake}` } onClick={ () => { this.nav('staking') } }>
           <DetailsIcon className={ `${classes.icon} icon` } />
           <Typography variant={'h3'} className={ `${classes.title} title` }>Stake</Typography>
         </Card>

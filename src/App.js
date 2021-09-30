@@ -3,7 +3,8 @@ import CssBaseline from '@material-ui/core/CssBaseline';
 import { createMuiTheme, MuiThemeProvider } from '@material-ui/core/styles';
 import {
   Switch,
-  Route
+  Route,
+  HashRouter
 } from "react-router-dom";
 import IpfsRouter from 'ipfs-react-router'
 
@@ -128,38 +129,47 @@ class App extends Component {
               alignItems: 'center',
               background: "#f9fafb"
             }}>
-              <Switch>
-                <Route path="/burnSummon">
-                  <Header />
-                  <BurnSummon />
-                </Route>
-                <Route path="/stake">
-                  <Header />
-                  <Stake />
-                </Route>
-                <Route path="/staking">
-                <Header />
-                  {/*<VersionToggle />*/}
-                  <RewardsPools />
-                </Route>
-                {/*<Route path="/vote">*/}
-                {/*  <Header />*/}
-                {/*  <VersionToggle />*/}
-                {/*  <Vote />*/}
-                {/*</Route>*/}
-                {/*<Route path="/propose">*/}
-                {/*<Header />*/}
-                {/*  <VersionToggle />*/}
-                {/*  <Propose />*/}
-                {/*</Route>*/}
-                {/*<Route path="/lock">*/}
-                {/*  <Header />*/}
-                {/*  <Lock />*/}
-                {/*</Route>*/}
-                <Route path="/">
-                  <Home />
-                </Route>
-              </Switch>
+              <HashRouter>
+                <Switch>
+                  <Route exact path="/">
+                    <Home />
+                  </Route>
+                  <Route exact path="/burn">
+                    <>
+                    <Header />
+                    <BurnSummon />
+                    </>
+                  </Route>
+                  <Route exact path="stake">
+                    <>
+                    <Header />
+                    <Stake />
+                    </>
+                  </Route>
+                  <Route exact path="/staking">
+                    <>
+                    <Header />
+                    {/*<VersionToggle />*/}
+                    <RewardsPools />
+                    </>
+                  </Route>
+                  {/*<Route path="/vote">*/}
+                  {/*  <Header />*/}
+                  {/*  <VersionToggle />*/}
+                  {/*  <Vote />*/}
+                  {/*</Route>*/}
+                  {/*<Route path="/propose">*/}
+                  {/*<Header />*/}
+                  {/*  <VersionToggle />*/}
+                  {/*  <Propose />*/}
+                  {/*</Route>*/}
+                  {/*<Route path="/lock">*/}
+                  {/*  <Header />*/}
+                  {/*  <Lock />*/}
+                  {/*</Route>*/}
+
+                </Switch>
+              </HashRouter>
             </div>
           }
         </IpfsRouter>
