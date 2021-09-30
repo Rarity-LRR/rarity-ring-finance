@@ -140,7 +140,7 @@ class App extends Component {
                     <BurnSummon />
                     </>
                   </Route>
-                  <Route exact path="stake">
+                  <Route exact path="/stake">
                     <>
                     <Header />
                     <Stake />

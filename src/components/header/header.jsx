@@ -165,7 +165,7 @@ class Header extends Component {
           <div className={ classes.icon }>
             <img
               alt=""
-              src={ require('../../assets/YFI-logo.png') }
+              src={ require('../../assets/ring-logo.jpg') }
               height={ '40px' }
               onClick={ () => { this.nav('') } }
             />

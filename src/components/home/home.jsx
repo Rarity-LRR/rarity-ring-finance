@@ -133,11 +133,11 @@ class Home extends Component {
       <div className={ classes.root }>
         <Card className={ `${classes.card} ${classes.vote}` } onClick={ () => { this.nav('burn') } }>
           <DetailsIcon className={ `${classes.icon} icon` } />
-          <Typography variant={'h3'} className={ `${classes.title} title` }>Burn</Typography>
+          <Typography variant={'h3'} className={ `${classes.title} title` }>Sacrifice Mining</Typography>
         </Card>
         <Card className={ `${classes.card} ${classes.stake}` } onClick={ () => { this.nav('staking') } }>
           <DetailsIcon className={ `${classes.icon} icon` } />
-          <Typography variant={'h3'} className={ `${classes.title} title` }>Stake</Typography>
+          <Typography variant={'h3'} className={ `${classes.title} title` }>Liquidity Mining</Typography>
         </Card>
         <Card className={ `${classes.card} ${classes.vote}` }>
           <HowToVoteIcon className={ `${classes.icon} icon` } />
