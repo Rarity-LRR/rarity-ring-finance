@@ -19,6 +19,8 @@ import {
   GET_BALANCES_RETURNED,
   GOVERNANCE_CONTRACT_CHANGED
 } from '../../constants'
+import Web3 from "web3";
+import config from "../../config";
 
 const styles = theme => ({
   root: {
@@ -149,7 +151,8 @@ class RewardPools extends Component {
       rewardPools: rewardPools,
       loading: !(account && rewardPools),
       account: account,
-      governanceContractVersion: governanceContractVersion
+      governanceContractVersion: governanceContractVersion,
+      apyAmount: 0
     }
 
     dispatcher.dispatch({ type: GET_BALANCES, content: {} })
@@ -179,6 +182,30 @@ class RewardPools extends Component {
   configureReturned = () => {
     this.setState({ loading: false })
   }
+
+  apy = async ()=>{
+    const web3 = new Web3(store.getStore('web3context').library.provider);
+    const rewardContract = new web3.eth.Contract(config.governanceV2ABI, config.governanceV2Address);
+    const rewardPerToken = await rewardContract.methods.rewardPerToken().call();
+    // console.log(rewardPerToken)
+    const poolLRRAmount = await rewardContract.methods.totalSupply().call();
+    // console.log(poolLRRAmount)
+
+    const lpContact = new web3.eth.Contract(config.lrrLPABI, config.lrrLP);
+    const reserves = await lpContact.methods.getReserves().call();
+    const lpAmount = await lpContact.methods.totalSupply().call();
+    // console.log(reserves)
+    const ftmAmount = reserves[0];
+    const lrrAmount = reserves[1];
+
+    // weekly ROI = (rewardPerToken * LRR_Price) * 100 / (LP_Price);
+    // LP_Price= (LRR_price* poo_LRR_amount + FTM_amount)/LP_amount
+
+    const lpPrice = ((ftmAmount/lrrAmount)*poolLRRAmount + ftmAmount)/lpAmount;
+    const ROI = (rewardPerToken * (ftmAmount/lrrAmount)) * 100 / (lpPrice);
+    // console.log(ROI*52);
+    return (ROI*52).toFixed(2);
+  };
 
   render() {
     const { classes } = this.props;
@@ -229,6 +256,11 @@ class RewardPools extends Component {
 
     const { classes } = this.props
 
+    const {apyAmount} = this.state;
+    this.apy().then(x=>{
+      this.setState({apyAmount:x})
+    });
+
     var address = null;
     let addy = ''
     if (rewardPool.tokens && rewardPool.tokens[0]) {
@@ -250,6 +282,7 @@ class RewardPools extends Component {
       >
         <Typography variant={ 'h4'}>Open</Typography>
       </Button>
+      <div style={{marginTop: '20px', fontSize: '16px', fontWeight: 600, fontFamily: 'ork Sans Thin",BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol'}}>APY: {apyAmount}%</div>
     </div>)
   }
 

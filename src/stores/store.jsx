@@ -239,6 +239,7 @@ class Store {
 
     dispatcher.register(
       function (payload) {
+        console.log(payload)
         switch (payload.type) {
           case CONFIGURE:
             this.configure(payload);

@@ -174,6 +174,9 @@ class Header extends Component {
           <div className={ classes.links }>
             { this.renderLink(location.pathname.substr(1)) }
           </div>
+          <div className={ classes.links }>
+            { location.pathname.substr(1) === 'stake'? this.renderBuyLink('Buy') : '' }
+          </div>
           <div className={ classes.account }>
             { address &&
               <Typography variant={ 'h4'} className={ classes.walletAddress } noWrap onClick={this.addressClicked} >
@@ -202,6 +205,18 @@ class Header extends Component {
       <div className={ (window.location.pathname==='/'+screen || (window.location.pathname==='/stake' && screen==='staking')  || (window.location.pathname==='/propose' && screen==='vote') )?classes.linkActive:classes.link } onClick={ () => { this.nav(screen) } }>
         <Typography variant={'h4'} className={ `title` }>{ screen }</Typography>
       </div>
+    )
+  }
+
+  renderBuyLink = (screen) => {
+    const {
+      classes
+    } = this.props;
+
+    return (
+        <div className={ classes.link } onClick={ () => { window.open("https://swap.spiritswap.finance/#/swap/0xDbC7a83c55DFd10A14D57fC48e40486ba6367b18");  } }>
+          <Typography variant={'h4'} className={ `title` }>{ screen }</Typography>
+        </div>
     )
   }
 

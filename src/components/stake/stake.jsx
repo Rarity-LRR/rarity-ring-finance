@@ -37,6 +37,8 @@ import {
   GET_BALANCES_RETURNED
 } from '../../constants'
 import BigNumber from "bignumber.js";
+import Web3 from "web3";
+import config from "../../config";
 
 const styles = theme => ({
   root: {
@@ -241,13 +243,13 @@ class Stake extends Component {
       governanceContractVersion: governanceContractVersion
     };
 
-    if(pool && ['FeeRewards', 'Governance'].includes(pool.id)) {
-      dispatcher.dispatch({ type: GET_YCRV_REQUIREMENTS, content: {} })
-    }
-
-    if(pool && ['GovernanceV2'].includes(pool.id)) {
-      dispatcher.dispatch({ type: GET_GOVERNANCE_REQUIREMENTS, content: {} })
-    }
+    // if(pool && ['FeeRewards', 'Governance'].includes(pool.id)) {
+    //   dispatcher.dispatch({ type: GET_YCRV_REQUIREMENTS, content: {} })
+    // }
+    //
+    // if(pool && ['GovernanceV2'].includes(pool.id)) {
+    //   dispatcher.dispatch({ type: GET_GOVERNANCE_REQUIREMENTS, content: {} })
+    // }
   }
 
   componentWillMount() {
@@ -662,6 +664,7 @@ class Stake extends Component {
     val[id + '_' + type] = bal
     this.setState(val)
   }
+
 
 }
 
